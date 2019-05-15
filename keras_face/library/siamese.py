@@ -435,7 +435,7 @@ class SiameseFaceNet(object):
         return min_dist, identity
 
     
-    def main():
+def main():
     fnet = SiameseFaceNet()
     '''
     因为VGGNET最后有三个全连接层, 因此,这个选项表示是否需要最上面的三个全连接层. 
