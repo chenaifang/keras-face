@@ -1,0 +1,6 @@
+#images：原始数据集
+#dlib-images：也是原始数据集，不再使用
+#dlib-align-images：经过人脸检测和人脸矫正的数据集
+#lfw-deepfunneled：自己找的开源数据集
+#opencv-images：作者使用的进行人脸检测的数据集
+#train1：第一次自己制作的数据集
