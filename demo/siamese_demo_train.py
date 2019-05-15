@@ -1,6 +1,6 @@
 import random
 
-from .content.keras_face.library.siamese import SiameseFaceNet
+from .keras_face.library.siamese import SiameseFaceNet
 import os
 import numpy as np
 
