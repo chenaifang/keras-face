@@ -443,17 +443,17 @@ def main():
     model_dir_path = './model'
     #image_dir_path = "./data/dlib-align-images"
     #在测试
-    image_dir_path = "./dlib-align-images4"
+    image_dir_path = "./dlib-align-images5"
     database = dict()
     
     
-    for filename in os.listdir(r"./dlib-align-images4"):
+    for filename in os.listdir(r"./dlib-align-images5"):
         pic_list=[]
-        for picname in os.listdir(r"./dlib-align-images4/"+filename):
+        for picname in os.listdir(r"./dlib-align-images5/"+filename):
             pic_list.append(fnet.img_to_encoding(image_dir_path+"/"+filename+"/"+picname))
         database[filename]=pic_list
     
-    np.save('picture_encoding4.npy', database)
+    np.save('picture_encoding5.npy', database)
     
     #read_dictionary = np.load("picture_encoding2.npy").item()
     
