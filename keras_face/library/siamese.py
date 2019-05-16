@@ -455,9 +455,9 @@ def main():
     
     np.save('picture_encoding2.npy', database)
     
-    read_dictionary = np.load("picture_encoding2.npy").item()
+    #read_dictionary = np.load("picture_encoding2.npy").item()
     
-    database = read_dictionary
+    #database = read_dictionary
 
     #database是人名；
     fnet.fit(database=database, model_dir_path=model_dir_path)
