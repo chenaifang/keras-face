@@ -443,10 +443,10 @@ def main():
     model_dir_path = './model'
     #image_dir_path = "./data/dlib-align-images"
     #在测试
-    image_dir_path = "./dlib-align-images2"
+    #image_dir_path = "./dlib-align-images2"
     database = dict()
     
-    
+    '''
     for filename in os.listdir(r"./dlib-align-images2"):
         pic_list=[]
         for picname in os.listdir(r"./dlib-align-images2/"+filename):
@@ -454,9 +454,22 @@ def main():
         database[filename]=pic_list
     
     np.save('picture_encoding2.npy', database)
-    
-    #read_dictionary = np.load("picture_encoding2.npy").item()
-    
+    '''
+    read_dictionary1 = np.load("picture_encoding1.npy").item()
+    read_dictionary2 = np.load("picture_encoding2.npy").item()
+    read_dictionary3 = np.load("picture_encoding3.npy").item()
+    read_dictionary4 = np.load("picture_encoding4.npy").item()
+    read_dictionary5 = np.load("picture_encoding5.npy").item()
+    read_dictionary6 = np.load("picture_encoding6.npy").item()
+    read_dictionary7 = np.load("picture_encoding7.npy").item()
+    database=read_dictionary1.copy()
+    database.update(read_dictionary2)
+    database.update(read_dictionary3)
+    database.update(read_dictionary4)
+    database.update(read_dictionary5)
+    database.update(read_dictionary6)
+    database.update(read_dictionary7)
+    print(database)
     #database = read_dictionary
 
     #database是人名；
