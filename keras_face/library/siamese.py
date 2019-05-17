@@ -445,18 +445,18 @@ def main():
     model_dir_path = './model'
     #image_dir_path = "./data/dlib-align-images"
     #在测试
-    #image_dir_path = "./dlib-align-images2"
+    image_dir_path = "./dlib-align-images1"
     database = dict()
     
-    '''
-    for filename in os.listdir(r"./dlib-align-images2"):
+    #'''
+    for filename in os.listdir(r"./dlib-align-images1"):
         pic_list=[]
-        for picname in os.listdir(r"./dlib-align-images2/"+filename):
+        for picname in os.listdir(r"./dlib-align-images1/"+filename):
             pic_list.append(fnet.img_to_encoding(image_dir_path+"/"+filename+"/"+picname))
         database[filename]=pic_list
     
-    np.save('picture_encoding2.npy', database)
-    '''
+    np.save('picture_encoding.npy', database)
+    #'''
     '''
     picture_encoding1="picture_encoding1.npy"
     with open(picture_encoding1,'rb')as handle:
@@ -464,7 +464,7 @@ def main():
     read_dictionary1 = np.array(my_array)
     database=read_dictionary1
     '''
-    read_dictionary1 = np.load(open(r"picture_encoding1.npy",'rb')).item()
+    #read_dictionary1 = np.load(open(r"picture_encoding1.npy",'rb')).item()
     #read_dictionary2 = np.load("picture_encoding2.npy").item()
     #read_dictionary3 = np.load("picture_encoding3.npy").item()
     #read_dictionary4 = np.load("picture_encoding4.npy").item()
