@@ -464,7 +464,7 @@ def main():
     read_dictionary1 = np.array(my_array)
     database=read_dictionary1
     '''
-    read_dictionary1 = np.load("picture_encoding1.npy").item()
+    read_dictionary1 = np.load(open(r"picture_encoding1.npy",'rb')).item()
     #read_dictionary2 = np.load("picture_encoding2.npy").item()
     #read_dictionary3 = np.load("picture_encoding3.npy").item()
     #read_dictionary4 = np.load("picture_encoding4.npy").item()
