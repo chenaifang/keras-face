@@ -265,6 +265,7 @@ class SiameseFaceNet(object):
         ax2.set_title('Accuracy  on Training and Validation Data')
         ax2.legend()
         plt.tight_layout()
+        plt.savefig("loss_and_acc.jpg")
         plt.show()
 
     def fit(self, database, model_dir_path, epochs=None, batch_size=None, threshold=None, vgg16_include_top=None):
@@ -464,11 +465,11 @@ def main():
     read_dictionary7 = np.load("picture_encoding7.npy").item()
     database=read_dictionary1.copy()
     database.update(read_dictionary2)
-    database.update(read_dictionary3)
-    database.update(read_dictionary4)
-    database.update(read_dictionary5)
-    database.update(read_dictionary6)
-    database.update(read_dictionary7)
+    #database.update(read_dictionary3)
+    #database.update(read_dictionary4)
+    #database.update(read_dictionary5)
+    #database.update(read_dictionary6)
+    #database.update(read_dictionary7)
     print(database)
     #database = read_dictionary
 
