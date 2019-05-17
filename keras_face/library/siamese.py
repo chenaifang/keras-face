@@ -327,7 +327,7 @@ class SiameseFaceNet(object):
         hist=self.model.fit([t_x[:, 0], t_x[:, 1]], t_y,
                        batch_size=batch_size,
                        epochs=epochs,
-                       validation_split=0.4,
+                       validation_split=0.3,
                        verbose=SiameseFaceNet.VERBOSE,
                        callbacks=[checkpoint],
                        shuffle=True)
