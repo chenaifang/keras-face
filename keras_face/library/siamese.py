@@ -445,13 +445,13 @@ def main():
     model_dir_path = './model'
     #image_dir_path = "./data/dlib-align-images"
     #在测试
-    image_dir_path = "./dlib-align-images6"
+    image_dir_path = "./dlib-align-images7"
     database = dict()
     
     #'''
-    for filename in os.listdir(r"./dlib-align-images6"):
+    for filename in os.listdir(r"./dlib-align-images7"):
         pic_list=[]
-        for picname in os.listdir(r"./dlib-align-images6/"+filename):
+        for picname in os.listdir(r"./dlib-align-images7/"+filename):
             pic_list.append(fnet.img_to_encoding(image_dir_path+"/"+filename+"/"+picname))
         database[filename]=pic_list
     
