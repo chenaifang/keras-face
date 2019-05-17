@@ -443,26 +443,26 @@ def main():
     model_dir_path = './model'
     #image_dir_path = "./data/dlib-align-images"
     #在测试
-    image_dir_path = "./dlib-align-image"
+    image_dir_path = "./dlib-align-images2"
     database = dict()
     
     
-    for filename in os.listdir(r"./dlib-align-image"):
+    for filename in os.listdir(r"./dlib-align-images2"):
         pic_list=[]
-        for picname in os.listdir(r"./dlib-align-image/"+filename):
+        for picname in os.listdir(r"./dlib-align-images2/"+filename):
             pic_list.append(fnet.img_to_encoding(image_dir_path+"/"+filename+"/"+picname))
         database[filename]=pic_list
     
-    np.save('picture_encoding.npy', database)
-    #'''
-    read_dictionary = np.load("picture_encoding.npy").item()
+    np.save('picture_encoding2.npy', database)
     
-    database = read_dictionary
+    #read_dictionary = np.load("picture_encoding2.npy").item()
+    
+    #database = read_dictionary
 
     #database是人名；
     fnet.fit(database=database, model_dir_path=model_dir_path)
 
-    #'''
+    print("result")
 
 if __name__ == '__main__':
     main()
