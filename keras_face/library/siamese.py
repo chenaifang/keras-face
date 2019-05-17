@@ -5,6 +5,7 @@ from keras.callbacks import ModelCheckpoint
 from keras.optimizers import SGD
 import cv2
 import numpy as np
+import pickle as pl
 from keras.layers import Input, Flatten, Dense, Dropout, Lambda
 from keras.optimizers import RMSprop
 from keras import backend as K
