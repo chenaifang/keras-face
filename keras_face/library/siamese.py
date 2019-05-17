@@ -457,15 +457,19 @@ def main():
     
     np.save('picture_encoding2.npy', database)
     '''
-    read_dictionary1 = np.load("picture_encoding1.npy").item()
-    read_dictionary2 = np.load("picture_encoding2.npy").item()
-    read_dictionary3 = np.load("picture_encoding3.npy").item()
-    read_dictionary4 = np.load("picture_encoding4.npy").item()
-    read_dictionary5 = np.load("picture_encoding5.npy").item()
-    read_dictionary6 = np.load("picture_encoding6.npy").item()
-    read_dictionary7 = np.load("picture_encoding7.npy").item()
-    database=read_dictionary1.copy()
-    database.update(read_dictionary2)
+    picture_encoding1="picture_encoding1.npy"
+    with open(picture_encoding1,'rb')as handle:
+        my_array=pl.load(handle)
+    read_dictionary1 = np.array(my_array)
+    database=read_dictionary1
+    #read_dictionary2 = np.load("picture_encoding2.npy").item()
+    #read_dictionary3 = np.load("picture_encoding3.npy").item()
+    #read_dictionary4 = np.load("picture_encoding4.npy").item()
+    #read_dictionary5 = np.load("picture_encoding5.npy").item()
+    #read_dictionary6 = np.load("picture_encoding6.npy").item()
+    #read_dictionary7 = np.load("picture_encoding7.npy").item()
+    #database=read_dictionary1.copy()
+    #database.update(read_dictionary2)
     #database.update(read_dictionary3)
     #database.update(read_dictionary4)
     #database.update(read_dictionary5)
