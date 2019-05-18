@@ -446,19 +446,19 @@ def main():
     #image_dir_path = "./data/dlib-align-images"
     #在测试
     image_dir_path1 = "./dlib-align-images1"
-	image_dir_path2 = "./dlib-align-images2"
-	image_dir_path3 = "./dlib-align-images3"
-	image_dir_path4 = "./dlib-align-images4"
-	image_dir_path5 = "./dlib-align-images5"
-	image_dir_path6 = "./dlib-align-images6"
-	image_dir_path7 = "./dlib-align-images7"
+    image_dir_path2 = "./dlib-align-images2"
+    image_dir_path3 = "./dlib-align-images3"
+    image_dir_path4 = "./dlib-align-images4"
+    image_dir_path5 = "./dlib-align-images5"
+    image_dir_path6 = "./dlib-align-images6"
+    image_dir_path7 = "./dlib-align-images7"
     database1 = dict()
-	database2 = dict()
-	database3 = dict()
-	database4 = dict()
-	database5 = dict()
-	database6 = dict()
-	database7 = dict()
+    database2 = dict()
+    database3 = dict()
+    database4 = dict()
+    database5 = dict()
+    database6 = dict()
+    database7 = dict()
     
     #'''
     for filename in os.listdir(r"./dlib-align-images1"):
@@ -468,48 +468,48 @@ def main():
         database1[filename]=pic_list
     
     np.save('picture_encoding1', database1)
-	
-	for filename in os.listdir(r"./dlib-align-images2"):
-		pic_list=[]
-		for picname in os.listdir(r"./dlib-align-images2/"+filename):
-			pic_list.append(fnet.img_to_encoding(image_dir_path2+"/"+filename+"/"+picname))
-		database2[filename]=pic_list
+    
+    for filename in os.listdir(r"./dlib-align-images2"):
+        pic_list=[]
+        for picname in os.listdir(r"./dlib-align-images2/"+filename):
+            pic_list.append(fnet.img_to_encoding(image_dir_path2+"/"+filename+"/"+picname))
+        database2[filename]=pic_list
     
     np.save('picture_encoding2', database2)
-	
-	for filename in os.listdir(r"./dlib-align-images3"):
+    
+    for filename in os.listdir(r"./dlib-align-images3"):
         pic_list=[]
         for picname in os.listdir(r"./dlib-align-images3/"+filename):
             pic_list.append(fnet.img_to_encoding(image_dir_path3+"/"+filename+"/"+picname))
         database3[filename]=pic_list
     
     np.save('picture_encoding3', database3)
-	
-	for filename in os.listdir(r"./dlib-align-images4"):
+    
+    for filename in os.listdir(r"./dlib-align-images4"):
         pic_list=[]
         for picname in os.listdir(r"./dlib-align-images4/"+filename):
             pic_list.append(fnet.img_to_encoding(image_dir_path4+"/"+filename+"/"+picname))
         database4[filename]=pic_list
     
     np.save('picture_encoding4', database4)
-	
-	for filename in os.listdir(r"./dlib-align-images5"):
+    
+    for filename in os.listdir(r"./dlib-align-images5"):
         pic_list=[]
         for picname in os.listdir(r"./dlib-align-images5/"+filename):
             pic_list.append(fnet.img_to_encoding(image_dir_path5+"/"+filename+"/"+picname))
         database5[filename]=pic_list
     
     np.save('picture_encoding5', database5)
-	
-	for filename in os.listdir(r"./dlib-align-images6"):
+    
+    for filename in os.listdir(r"./dlib-align-images6"):
         pic_list=[]
         for picname in os.listdir(r"./dlib-align-images6/"+filename):
             pic_list.append(fnet.img_to_encoding(image_dir_path6+"/"+filename+"/"+picname))
         database6[filename]=pic_list
     
     np.save('picture_encoding6', database6)
-	
-	for filename in os.listdir(r"./dlib-align-images7"):
+    
+    for filename in os.listdir(r"./dlib-align-images7"):
         pic_list=[]
         for picname in os.listdir(r"./dlib-align-images7/"+filename):
             pic_list.append(fnet.img_to_encoding(image_dir_path7+"/"+filename+"/"+picname))
