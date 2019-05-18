@@ -448,7 +448,7 @@ def main():
     image_dir_path = "./dlib-align-images2"
     database = dict()
     
-    '''
+    #'''
     for filename in os.listdir(r"./dlib-align-images2"):
         pic_list=[]
         for picname in os.listdir(r"./dlib-align-images2/"+filename):
@@ -456,7 +456,7 @@ def main():
         database[filename]=pic_list
     
     np.save('picture_encoding.npy', database)
-    '''
+    #'''
     '''
     picture_encoding1="picture_encoding1.npy"
     with open(picture_encoding1,'rb')as handle:
@@ -464,13 +464,13 @@ def main():
     read_dictionary1 = np.array(my_array)
     database=read_dictionary1
     '''
-    read_dictionary1 = np.load("picture_encoding1.npy",allow_pickle=True).item()
-    read_dictionary2 = np.load("picture_encoding2.npy",allow_pickle=True).item()
-    read_dictionary3 = np.load("picture_encoding3.npy",allow_pickle=True).item()
-    read_dictionary4 = np.load("picture_encoding4.npy",allow_pickle=True).item()
-    read_dictionary5 = np.load("picture_encoding5.npy",allow_pickle=True).item()
-    read_dictionary6 = np.load("picture_encoding6.npy",allow_pickle=True).item()
-    read_dictionary7 = np.load("picture_encoding7.npy",allow_pickle=True).item()
+    #read_dictionary1 = np.load("picture_encoding1.npy",allow_pickle=True).item()
+    #read_dictionary2 = np.load("picture_encoding2.npy",allow_pickle=True).item()
+    #read_dictionary3 = np.load("picture_encoding3.npy",allow_pickle=True).item()
+    #read_dictionary4 = np.load("picture_encoding4.npy",allow_pickle=True).item()
+    #read_dictionary5 = np.load("picture_encoding5.npy",allow_pickle=True).item()
+    #read_dictionary6 = np.load("picture_encoding6.npy",allow_pickle=True).item()
+    #read_dictionary7 = np.load("picture_encoding7.npy",allow_pickle=True).item()
     database=read_dictionary1.copy()
     database.update(read_dictionary2)
     database.update(read_dictionary3)
