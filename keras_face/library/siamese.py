@@ -455,7 +455,7 @@ def main():
             pic_list.append(fnet.img_to_encoding(image_dir_path+"/"+filename+"/"+picname))
         database[filename]=pic_list
     
-    np.save('picture_encoding.npy', database)
+    np.save('picture_encoding', database)
     #'''
     '''
     picture_encoding1="picture_encoding1.npy"
