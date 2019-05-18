@@ -445,17 +445,77 @@ def main():
     model_dir_path = './model'
     #image_dir_path = "./data/dlib-align-images"
     #在测试
-    image_dir_path = "./dlib-align-images2"
-    database = dict()
+    image_dir_path1 = "./dlib-align-images1"
+	image_dir_path2 = "./dlib-align-images2"
+	image_dir_path3 = "./dlib-align-images3"
+	image_dir_path4 = "./dlib-align-images4"
+	image_dir_path5 = "./dlib-align-images5"
+	image_dir_path6 = "./dlib-align-images6"
+	image_dir_path7 = "./dlib-align-images7"
+    database1 = dict()
+	database2 = dict()
+	database3 = dict()
+	database4 = dict()
+	database5 = dict()
+	database6 = dict()
+	database7 = dict()
     
     #'''
-    for filename in os.listdir(r"./dlib-align-images2"):
+    for filename in os.listdir(r"./dlib-align-images1"):
         pic_list=[]
-        for picname in os.listdir(r"./dlib-align-images2/"+filename):
-            pic_list.append(fnet.img_to_encoding(image_dir_path+"/"+filename+"/"+picname))
-        database[filename]=pic_list
+        for picname in os.listdir(r"./dlib-align-images1/"+filename):
+            pic_list.append(fnet.img_to_encoding(image_dir_path1+"/"+filename+"/"+picname))
+        database1[filename]=pic_list
     
-    np.save('picture_encoding', database)
+    np.save('picture_encoding1', database1)
+	
+	for filename in os.listdir(r"./dlib-align-images2"):
+		pic_list=[]
+		for picname in os.listdir(r"./dlib-align-images2/"+filename):
+			pic_list.append(fnet.img_to_encoding(image_dir_path2+"/"+filename+"/"+picname))
+		database2[filename]=pic_list
+    
+    np.save('picture_encoding2', database2)
+	
+	for filename in os.listdir(r"./dlib-align-images3"):
+        pic_list=[]
+        for picname in os.listdir(r"./dlib-align-images3/"+filename):
+            pic_list.append(fnet.img_to_encoding(image_dir_path3+"/"+filename+"/"+picname))
+        database3[filename]=pic_list
+    
+    np.save('picture_encoding3', database3)
+	
+	for filename in os.listdir(r"./dlib-align-images4"):
+        pic_list=[]
+        for picname in os.listdir(r"./dlib-align-images4/"+filename):
+            pic_list.append(fnet.img_to_encoding(image_dir_path4+"/"+filename+"/"+picname))
+        database4[filename]=pic_list
+    
+    np.save('picture_encoding4', database4)
+	
+	for filename in os.listdir(r"./dlib-align-images5"):
+        pic_list=[]
+        for picname in os.listdir(r"./dlib-align-images5/"+filename):
+            pic_list.append(fnet.img_to_encoding(image_dir_path5+"/"+filename+"/"+picname))
+        database5[filename]=pic_list
+    
+    np.save('picture_encoding5', database5)
+	
+	for filename in os.listdir(r"./dlib-align-images6"):
+        pic_list=[]
+        for picname in os.listdir(r"./dlib-align-images6/"+filename):
+            pic_list.append(fnet.img_to_encoding(image_dir_path6+"/"+filename+"/"+picname))
+        database6[filename]=pic_list
+    
+    np.save('picture_encoding6', database6)
+	
+	for filename in os.listdir(r"./dlib-align-images7"):
+        pic_list=[]
+        for picname in os.listdir(r"./dlib-align-images7/"+filename):
+            pic_list.append(fnet.img_to_encoding(image_dir_path7+"/"+filename+"/"+picname))
+        database7[filename]=pic_list
+    
+    np.save('picture_encoding7', database7)
     #'''
     '''
     picture_encoding1="picture_encoding1.npy"
@@ -471,18 +531,18 @@ def main():
     #read_dictionary5 = np.load("picture_encoding5.npy",allow_pickle=True).item()
     #read_dictionary6 = np.load("picture_encoding6.npy",allow_pickle=True).item()
     #read_dictionary7 = np.load("picture_encoding7.npy",allow_pickle=True).item()
-    database=read_dictionary1.copy()
-    database.update(read_dictionary2)
-    database.update(read_dictionary3)
-    database.update(read_dictionary4)
-    database.update(read_dictionary5)
-    database.update(read_dictionary6)
-    database.update(read_dictionary7)
-    print(database)
+    #database=read_dictionary1.copy()
+    #database.update(read_dictionary2)
+    #database.update(read_dictionary3)
+    #database.update(read_dictionary4)
+    #database.update(read_dictionary5)
+    #database.update(read_dictionary6)
+    #database.update(read_dictionary7)
+    #print(database)
     #database = read_dictionary
 
     #database是人名；
-    fnet.fit(database=database, model_dir_path=model_dir_path)
+    #fnet.fit(database=database, model_dir_path=model_dir_path)
 
     print("result")
 
