@@ -460,7 +460,7 @@ def main():
     database6 = dict()
     database7 = dict()
     
-    #'''
+    '''
     for filename in os.listdir(r"./dlib-align-images1"):
         pic_list=[]
         for picname in os.listdir(r"./dlib-align-images1/"+filename):
@@ -492,7 +492,7 @@ def main():
         database4[filename]=pic_list
     
     np.save('picture_encoding4', database4)
-    
+    '''
     for filename in os.listdir(r"./dlib-align-images5"):
         pic_list=[]
         for picname in os.listdir(r"./dlib-align-images5/"+filename):
