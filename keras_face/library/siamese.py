@@ -283,7 +283,7 @@ class SiameseFaceNet(object):
         if batch_size is None:
             batch_size = 256
         if epochs is None:
-            epochs = 60
+            epochs = 120
         if vgg16_include_top is not None:
             self.vgg16_include_top = vgg16_include_top
         #取database这个字典的第一个键值对
