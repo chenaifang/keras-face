@@ -278,7 +278,7 @@ class SiameseFaceNet(object):
         if threshold is not None:
             self.threshold = threshold
         if batch_size is None:
-            batch_size = 128
+            batch_size = 256
         if epochs is None:
             epochs = 60
         if vgg16_include_top is not None:
