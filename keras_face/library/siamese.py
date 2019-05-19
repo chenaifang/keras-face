@@ -46,7 +46,7 @@ def eucl_dist_output_shape(shapes):
 #对比损失
 def contrastive_loss(y_true, y_pred):
     margin = 1 #自己设定的阈值
-    return K.mean(y_true * K.square(y_pred) +
+    return K.mean(2*y_true * K.square(y_pred) +
                   (1 - y_true) * K.square(K.maximum(margin - y_pred, 0)))
 
 
@@ -119,7 +119,7 @@ class SiameseFaceNet(object):
         x = Dense(1024, activation='sigmoid',kernel_initializer='normal',bias_initializer='zeros')(x) #Tensor("dense_1/Relu:0", shape=(?, 128), dtype=float32)
         #dropout概率，输出的非0元素是原来的 “1/keep_prob” 倍
         x = Dropout(0.5)(x) #Tensor("dropout_1/cond/Merge:0", shape=(?, 128), dtype=float32)
-        x = Dense(2048, activation='sigmoid',kernel_initializer='normal',bias_initializer='zeros')(x) #Tensor("dense_2/Relu:0", shape=(?, 128), dtype=float32)
+        x = Dense(1024, activation='sigmoid',kernel_initializer='normal',bias_initializer='zeros')(x) #Tensor("dense_2/Relu:0", shape=(?, 128), dtype=float32)
         x = Dropout(0.5)(x) #Tensor("dropout_2/cond/Merge:0", shape=(?, 128), dtype=float32)
         #x = Dense(2048, activation='sigmoid',kernel_initializer='random_uniform',bias_initializer='zeros')(x)
         #x = Dropout(0.5)(x)
