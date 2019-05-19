@@ -7,7 +7,7 @@ import cv2
 import numpy as np
 import pickle as pl
 from keras.layers import Input, Flatten, Dense, Dropout, Lambda
-from keras.optimizers import RMSprop
+from keras.optimizers import RMSprop, Adam
 from keras import backend as K
 from keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
 from keras.preprocessing.image import img_to_array
