@@ -121,7 +121,7 @@ class SiameseFaceNet(object):
         x = Dropout(0.5)(x) #Tensor("dropout_1/cond/Merge:0", shape=(?, 128), dtype=float32)
         x = Dense(4096, activation='sigmoid',kernel_initializer='random_uniform',bias_initializer='zeros')(x) #Tensor("dense_2/Relu:0", shape=(?, 128), dtype=float32)
         x = Dropout(0.5)(x) #Tensor("dropout_2/cond/Merge:0", shape=(?, 128), dtype=float32)
-        x = Dense(256, activation='sigmoid',kernel_initializer='random_uniform',bias_initializer='zeros')(x) #Tensor("dense_3/Relu:0", shape=(?, 128), dtype=float32)
+        x = Dense(128, activation='sigmoid',kernel_initializer='random_uniform',bias_initializer='zeros')(x) #Tensor("dense_3/Relu:0", shape=(?, 128), dtype=float32)
         #input:Tensor("input_3:0", shape=(?, 1, 1000), dtype=float32);x:Tensor("dense_3/Relu:0", shape=(?, 128), dtype=float32)
         model=Model(input,x)
         plot_model(model, to_file='base_model.png', show_shapes=True)
@@ -539,13 +539,13 @@ def main():
     database.update(read_dictionary5)
     database.update(read_dictionary6)
     database.update(read_dictionary7)
-    print(database)
+    
     #database = read_dictionary
 
     #database是人名；
     fnet.fit(database=database, model_dir_path=model_dir_path)
 
-    print("result")
+    
 
 if __name__ == '__main__':
     main()
