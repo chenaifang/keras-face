@@ -7,7 +7,7 @@ import cv2
 import numpy as np
 import pickle as pl
 from keras.layers import Input, Flatten, Dense, Dropout, Lambda
-from keras.optimizers import RMSprop, Adam
+from keras.optimizers import RMSprop, Adam, Adagrad
 from keras import backend as K
 from keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
 from keras.preprocessing.image import img_to_array
@@ -159,7 +159,8 @@ class SiameseFaceNet(object):
                           output_shape=eucl_dist_output_shape)([processed_a, processed_b])
         model = Model([input_a, input_b], distance)#好像是输入是两张照片，输出是两张照片的欧式距离
 
-        rms = RMSprop()#设置优化器，选择优化算法
+        #rms = RMSprop()#设置优化器，选择优化算法
+        rms = Adagrad()
         #rms = SGD()
         model.compile(loss=contrastive_loss, optimizer=rms, metrics=[self.accuracy])
         #print(model.summary())#输出模型各层的参数状况
