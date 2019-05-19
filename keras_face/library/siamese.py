@@ -500,7 +500,7 @@ def main():
         database5[filename]=pic_list
     
     np.save('picture_encoding5', database5)
-    '''
+    
     for filename in os.listdir(r"./dlib-align-images6"):
         pic_list=[]
         for picname in os.listdir(r"./dlib-align-images6/"+filename):
@@ -516,7 +516,7 @@ def main():
         database7[filename]=pic_list
     
     np.save('picture_encoding7', database7)
-    #'''
+    '''
     '''
     picture_encoding1="picture_encoding1.npy"
     with open(picture_encoding1,'rb')as handle:
@@ -524,25 +524,25 @@ def main():
     read_dictionary1 = np.array(my_array)
     database=read_dictionary1
     '''
-    #read_dictionary1 = np.load("picture_encoding1.npy",allow_pickle=True).item()
-    #read_dictionary2 = np.load("picture_encoding2.npy",allow_pickle=True).item()
-    #read_dictionary3 = np.load("picture_encoding3.npy",allow_pickle=True).item()
-    #read_dictionary4 = np.load("picture_encoding4.npy",allow_pickle=True).item()
-    #read_dictionary5 = np.load("picture_encoding5.npy",allow_pickle=True).item()
-    #read_dictionary6 = np.load("picture_encoding6.npy",allow_pickle=True).item()
-    #read_dictionary7 = np.load("picture_encoding7.npy",allow_pickle=True).item()
-    #database=read_dictionary1.copy()
-    #database.update(read_dictionary2)
-    #database.update(read_dictionary3)
-    #database.update(read_dictionary4)
-    #database.update(read_dictionary5)
-    #database.update(read_dictionary6)
-    #database.update(read_dictionary7)
-    #print(database)
+    read_dictionary1 = np.load("picture_encoding1.npy",allow_pickle=True).item()
+    read_dictionary2 = np.load("picture_encoding2.npy",allow_pickle=True).item()
+    read_dictionary3 = np.load("picture_encoding3.npy",allow_pickle=True).item()
+    read_dictionary4 = np.load("picture_encoding4.npy",allow_pickle=True).item()
+    read_dictionary5 = np.load("picture_encoding5.npy",allow_pickle=True).item()
+    read_dictionary6 = np.load("picture_encoding6.npy",allow_pickle=True).item()
+    read_dictionary7 = np.load("picture_encoding7.npy",allow_pickle=True).item()
+    database=read_dictionary1.copy()
+    database.update(read_dictionary2)
+    database.update(read_dictionary3)
+    database.update(read_dictionary4)
+    database.update(read_dictionary5)
+    database.update(read_dictionary6)
+    database.update(read_dictionary7)
+    print(database)
     #database = read_dictionary
 
     #database是人名；
-    #fnet.fit(database=database, model_dir_path=model_dir_path)
+    fnet.fit(database=database, model_dir_path=model_dir_path)
 
     print("result")
 
