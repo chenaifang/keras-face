@@ -157,7 +157,8 @@ class SiameseFaceNet(object):
                           output_shape=eucl_dist_output_shape)([processed_a, processed_b])
         model = Model([input_a, input_b], distance)#好像是输入是两张照片，输出是两张照片的欧式距离
 
-        rms = RMSprop()#设置优化器，选择优化算法
+        #rms = RMSprop()#设置优化器，选择优化算法
+        rms = Adam()
         model.compile(loss=contrastive_loss, optimizer=rms, metrics=[self.accuracy])
         #print(model.summary())#输出模型各层的参数状况
         print("model summary")
