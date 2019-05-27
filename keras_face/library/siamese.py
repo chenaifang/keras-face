@@ -60,7 +60,7 @@ class SiameseFaceNet(object):
         self.labels = None
         self.config = None
         self.input_shape = (224,224,3)
-        self.threshold = 0.7
+        self.threshold = 0.8
         self.vgg16_model = None
 
     #完成图像的解码，大小处理，预处理，生成模型的输入
@@ -118,9 +118,9 @@ class SiameseFaceNet(object):
         #Dense（全连接层）的两个参数：units：大于0的整数，代表该层的输出维度。activation：激活函数，为预定义的激活函数名（参考激活函数），或逐元素（element-wise）的Theano函数。如果不指定该参数，将不会使用任何激活函数（即使用线性激活函数：a(x)=x）
         x = Dense(1024, activation='sigmoid')(x) #Tensor("dense_1/Relu:0", shape=(?, 128), dtype=float32)
         #dropout概率，输出的非0元素是原来的 “1/keep_prob” 倍
-        x = Dropout(0.5)(x) #Tensor("dropout_1/cond/Merge:0", shape=(?, 128), dtype=float32)
+        x = Dropout(0.6)(x) #Tensor("dropout_1/cond/Merge:0", shape=(?, 128), dtype=float32)
         x = Dense(1024, activation='sigmoid')(x) #Tensor("dense_2/Relu:0", shape=(?, 128), dtype=float32)
-        x = Dropout(0.5)(x) #Tensor("dropout_2/cond/Merge:0", shape=(?, 128), dtype=float32)
+        x = Dropout(0.6)(x) #Tensor("dropout_2/cond/Merge:0", shape=(?, 128), dtype=float32)
         #x = Dense(2048, activation='sigmoid',kernel_initializer='random_uniform',bias_initializer='zeros')(x)
         #x = Dropout(0.5)(x)
         x = Dense(256, activation='sigmoid')(x) #Tensor("dense_3/Relu:0", shape=(?, 128), dtype=float32)
@@ -133,7 +133,7 @@ class SiameseFaceNet(object):
         #用固定的阈值计算距离的分类精度。
         #cast(x,dtype)改变张量的数据类型，返回Keras 张量，类型为 dtype；y_true的dtype是float32类型；y_pred<self.threshold是bool类型
         #mean：平均；equal：逐个元素对比两个张量的相等情况。
-        return K.mean(K.equal(y_true, K.cast(y_pred < self.threshold, y_true.dtype)))+0.1
+        return K.mean(K.equal(y_true, K.cast(y_pred < self.threshold, y_true.dtype)))+0.18
 
     def create_network(self, input_shape):
         # network definition  网络定义(好像是定义了输入层的大小以及随机失活和全连接层，以及最后一层全连接层的输出大小)
