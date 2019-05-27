@@ -46,7 +46,7 @@ def eucl_dist_output_shape(shapes):
 #对比损失
 def contrastive_loss(y_true, y_pred):
     margin = 1 #自己设定的阈值
-    return K.mean(2*y_true * K.square(y_pred) +
+    return K.mean(y_true * K.square(y_pred) +
                   (1 - y_true) * K.square(K.maximum(margin - y_pred, 0)))
 
 
