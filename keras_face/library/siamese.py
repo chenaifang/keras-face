@@ -116,10 +116,10 @@ class SiameseFaceNet(object):
         '''
         x = Flatten()(input) #Tensor("flatten_1_1/Reshape:0", shape=(?, ?), dtype=float32)
         #Dense（全连接层）的两个参数：units：大于0的整数，代表该层的输出维度。activation：激活函数，为预定义的激活函数名（参考激活函数），或逐元素（element-wise）的Theano函数。如果不指定该参数，将不会使用任何激活函数（即使用线性激活函数：a(x)=x）
-        x = Dense(1024, activation='relu')(x) #Tensor("dense_1/Relu:0", shape=(?, 128), dtype=float32)
+        x = Dense(1024, activation='sigmoid')(x) #Tensor("dense_1/Relu:0", shape=(?, 128), dtype=float32)
         #dropout概率，输出的非0元素是原来的 “1/keep_prob” 倍
         x = Dropout(0.5)(x) #Tensor("dropout_1/cond/Merge:0", shape=(?, 128), dtype=float32)
-        x = Dense(1024, activation='relu')(x) #Tensor("dense_2/Relu:0", shape=(?, 128), dtype=float32)
+        x = Dense(1024, activation='sigmoid')(x) #Tensor("dense_2/Relu:0", shape=(?, 128), dtype=float32)
         x = Dropout(0.5)(x) #Tensor("dropout_2/cond/Merge:0", shape=(?, 128), dtype=float32)
         #x = Dense(2048, activation='sigmoid',kernel_initializer='random_uniform',bias_initializer='zeros')(x)
         #x = Dropout(0.5)(x)
