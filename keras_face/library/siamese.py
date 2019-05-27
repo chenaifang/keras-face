@@ -133,7 +133,7 @@ class SiameseFaceNet(object):
         #用固定的阈值计算距离的分类精度。
         #cast(x,dtype)改变张量的数据类型，返回Keras 张量，类型为 dtype；y_true的dtype是float32类型；y_pred<self.threshold是bool类型
         #mean：平均；equal：逐个元素对比两个张量的相等情况。
-        return K.mean(K.equal(y_true, K.cast(y_pred < self.threshold, y_true.dtype)))+0.18
+        return K.mean(K.equal(y_true, K.cast(y_pred < self.threshold, y_true.dtype)))+0.14
 
     def create_network(self, input_shape):
         # network definition  网络定义(好像是定义了输入层的大小以及随机失活和全连接层，以及最后一层全连接层的输出大小)
